@@ -110,11 +110,3 @@ Contributions are welcome! Suggested workflow:
 4. Push and open a pull request
 
 Please include clear descriptions and any relevant testing notes in your PR.
-
-## License
-This project is available under the MIT License. See the LICENSE file for details.
-
-## Contact
-Created by the Orbit project team. For questions or help, open an issue or reach out to the repository maintainers.
-
-```
