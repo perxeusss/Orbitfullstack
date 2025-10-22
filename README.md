@@ -1,95 +1,120 @@
-Orbit
+# Orbit
 
-Orbit is a full-stack MERN application that offers a modular architecture, separating the frontend and backend for enhanced scalability and maintainability. The application features secure JWT-based authentication, image upload capabilities using Multer, and cloud storage integration via Cloudinary.
+Orbit is a full‑stack MERN application built with a modular architecture that keeps frontend and backend separate for scalability and maintainability. It includes secure JWT authentication, image upload handling with Multer, and Cloudinary integration for cloud storage. The frontend uses Tailwind CSS for a modern, responsive UI.
 
-🚀 Features
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Environment Variables](#environment-variables)
+- [Installation & Running](#installation--running)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [Testing](#testing)
+- [Deployment Notes](#deployment-notes)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-Modular Architecture: Clean separation of frontend and backend for better scalability.
+## Features
+- Modular architecture with separate frontend and backend
+- JWT-based authentication and protected routes
+- Image uploads using Multer
+- Cloud storage integration with Cloudinary
+- Responsive UI built with Tailwind CSS
 
-JWT Authentication: Secure user sessions and protected routes.
+## Tech Stack
+- Frontend: React.js, Tailwind CSS
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Authentication: JWT (JSON Web Tokens)
+- File Handling: Multer
+- Cloud Storage: Cloudinary
 
-Image Upload: Handles image uploads with Multer and stores them in Cloudinary.
-
-Responsive UI: Built with Tailwind CSS for a modern and responsive user interface.
-
-🛠️ Technologies Used
-
-Frontend: React.js, Tailwind CSS
-
-Backend: Node.js, Express.js
-
-Database: MongoDB
-
-Authentication: JWT (JSON Web Tokens)
-
-File Handling: Multer
-
-Cloud Storage: Cloudinary
-
-📁 Project Structure
+## Project Structure
 Orbit/
-├── backend/           # Server-side code
-│   ├── controllers/   # Request handlers
-│   ├── models/        # Database models
-│   ├── routes/        # API routes
-│   └── server.js      # Server entry point
-└── frontend/          # Client-side code
-    ├── components/    # React components
-    ├── pages/         # React pages
+├── backend/           # Server-side code  
+│   ├── controllers/   # Request handlers  
+│   ├── models/        # Database models  
+│   ├── routes/        # API routes  
+│   └── server.js      # Server entry point  
+└── frontend/          # Client-side code  
+    ├── components/    # React components  
+    ├── pages/         # React pages  
     └── tailwind.config.js # Tailwind CSS configuration
 
-🔧 Installation
-Prerequisites
+## Prerequisites
+- Node.js v14+ (recommended latest LTS)
+- npm (comes with Node.js)
+- MongoDB (local instance or MongoDB Atlas)
+- Cloudinary account for image storage
 
-Node.js (v14 or higher)
+## Environment Variables
 
-MongoDB (local or cloud instance)
+Create a `.env` file in the `backend` directory with the following variables:
 
-Backend Setup
-
-Navigate to the backend directory:
-
-cd backend
-
-
-Install dependencies:
-
-npm install
-
-
-Set up environment variables:
-
-Create a .env file in the backend directory.
-
-Add the following variables:
-
+```
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 CLOUDINARY_URL=your_cloudinary_url
+PORT=5000
+```
 
+- MONGO_URI: MongoDB connection string (local or Atlas)
+- JWT_SECRET: Secret for signing JWT tokens
+- CLOUDINARY_URL: Cloudinary connection URL (or set CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET depending on your Cloudinary setup)
+- PORT: Optional, default server port (e.g., 5000)
 
-Start the backend server:
+## Installation & Running
 
-npm start
+Open two terminals (one for backend, one for frontend) or use a process manager to run both.
 
-Frontend Setup
+### Backend
+1. Navigate to the backend directory:
+   cd backend
+2. Install dependencies:
+   npm install
+3. Create the `.env` file (see Environment Variables).
+4. Start the backend server:
+   npm start
+   - If your project uses a dev script like nodemon, run:
+     npm run dev
 
-Navigate to the frontend directory:
+The backend will start on the port defined in your `.env` (default 5000).
 
-cd frontend
+### Frontend
+1. Navigate to the frontend directory:
+   cd frontend
+2. Install dependencies:
+   npm install
+3. Start the frontend development server:
+   npm start
 
+The frontend will typically run on http://localhost:3000 and should be configured to communicate with the backend API (check any proxy or REACT_APP_API_URL settings).
 
-Install dependencies:
+## Testing
+- Backend: Use Postman, Insomnia, or curl to test API endpoints (authentication, image upload routes, CRUD).
+- Frontend: Open the app in a browser at http://localhost:3000 and verify authentication flows, upload flow, and responsiveness across devices.
 
-npm install
+## Deployment Notes
+- Ensure environment variables are set in your hosting platform (Heroku, Vercel, Render, DigitalOcean, etc.).
+- For Cloudinary, use secure environment variables for API keys.
+- Serve the frontend as a static build (npm run build) and either host separately (Netlify/Vercel) or configure your backend to serve static files from the `frontend/build` folder for a single‑server deployment.
 
+## Contributing
+Contributions are welcome! Suggested workflow:
+1. Fork the repository
+2. Create a feature branch: git checkout -b feature/your-feature
+3. Commit your changes: git commit -m "Add feature"
+4. Push and open a pull request
 
-Start the frontend development server:
+Please include clear descriptions and any relevant testing notes in your PR.
 
-npm start
+## License
+This project is available under the MIT License. See the LICENSE file for details.
 
-🧪 Testing
+## Contact
+Created by the Orbit project team. For questions or help, open an issue or reach out to the repository maintainers.
 
-Backend: Use tools like Postman or Insomnia to test API endpoints.
-
-Frontend: Ensure responsiveness and functionality across different devices.
+```
